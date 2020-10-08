@@ -1,7 +1,7 @@
 import React from "react";
 import {
-  getCreatedBy,
-  deleteById,
+  getNotesCreatedByProvider,
+  deleteNoteById,
   searchNotesBySeeker,
   searchNotesByProvider,
   getNotesBySeekerId,
@@ -75,7 +75,7 @@ class Notes extends React.Component {
   getAllProviderNotes = () => {
     const pageIndex = this.state.pagination.pageIndex;
     const pageSize = this.state.pagination.pageSize;
-    getCreatedBy(pageIndex, pageSize)
+    getNotesCreatedByProvider(pageIndex, pageSize)
       .then(this.onGetCreatedBySuccess)
       .then(this.renderNotes)
       .catch(this.onGetCreatedByError);
@@ -202,7 +202,7 @@ class Notes extends React.Component {
   onClickDelete = (singleNote) => {
     const noteId = singleNote.id;
     _logger(noteId);
-    deleteById(noteId)
+    deleteNoteById(noteId)
       .then(this.onDeleteSuccess)
       .then(this.removeFromPage(noteId))
       .then(this.determineRouting)

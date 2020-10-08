@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  add,
-  getById,
-  updateById,
+  addNote,
+  getNoteById,
+  updateNoteById,
   getListOfSeekerNames,
 } from "../../services/noteService";
 import { Formik, Form, Field } from "formik";
@@ -95,7 +95,7 @@ class NoteForm extends React.Component {
         _logger("setFor is triggered by component did mount");
       } else {
         _logger("get by id has fired");
-        getById(noteId).then(this.onGetByIdSuccess).catch(this.onGetByIdError);
+        getNoteById(noteId).then(this.onGetByIdSuccess).catch(this.onGetByIdError);
       }
     }
   };
@@ -133,11 +133,11 @@ class NoteForm extends React.Component {
     if (editNoteStatus === true) {
       const noteId = this.props.match.params.noteId;
       _logger(noteId);
-      updateById(values, noteId)
+      updateNoteById(values, noteId)
         .then(this.onUpdateNoteSuccess)
         .catch(this.onUpdateNoteError);
     } else {
-      add(values).then(this.onAddNoteSuccess).catch(this.onAddNoteError);
+      addNote(values).then(this.onAddNoteSuccess).catch(this.onAddNoteError);
     }
   };
   //End form functions
