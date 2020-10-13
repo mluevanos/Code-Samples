@@ -110,7 +110,6 @@ class NoteForm extends React.Component {
       return {
         ...prevState,
         formData: {
-          // ...formData,
           notes: notes,
           seekerId: seekerId,
           tagId: tagId,
