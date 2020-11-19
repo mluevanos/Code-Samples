@@ -39,3 +39,19 @@ Includes:
 * Stored Procedures involving batch Insert/Update with a UDT to assign many skills to one friend
 
 
+### Live!
+
+https://valore.azurewebsites.net/
+
+Admin: 
+vcAdmin@dispostable.com
+Password1!
+
+Provider: 
+marla12@dispostable.com
+Password123!
+
+Seeker:
+felix55@dispostable.com
+Password123!
+
